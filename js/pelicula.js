@@ -32,7 +32,8 @@ class Pelicula{
         this.narrador.hablar('Aparece un sujeto estraño en el pueblo con un sombrero de copa')
         this.morgan.hablar('Vaya basura de pueblo...')
         this.morgan.hablar('¡Eh tú! ¡Pringao! Dame ese caballo y la cartera')
-
+        
+        this.narrador.inicio('Maria y Paco se encuentran frente a Morgan e inician un tiroteo')
         
         let muere
         let disparador
@@ -191,6 +192,10 @@ class Pueblo{
 class Narrador{
     hablar(texto){
         document.write('<p class="narrador">*'+texto+'*</p>')
+    }
+
+    inicio(texto){
+        document.write('<h2 class="narrador">*'+texto+'*</h2>')
     }
 
     final(texto){
