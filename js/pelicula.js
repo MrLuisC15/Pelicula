@@ -20,6 +20,7 @@ class Pelicula{
     iniciar(){
         document.write('<h1>' + this.titulo + '</h1>');
         document.write('<p>'+this.pueblo.nombre+' era un pueblo '+this.pueblo.descripcion+'</p>')
+        this.narrador.hablar('Era una bonita mañana')
         this.paco.hablar('Hola '+this.maria.nombre+'. Hoy hace un día espléndido.')
         this.maria.hablar('Hola '+this.paco.nombre+', la verdad es que sí.')
         this.narrador.hablar('Ambos se miraron un instante y siguieron su amino...')
@@ -36,7 +37,7 @@ class Pueblo{
 
 class Narrador{
     hablar(texto){
-        document.write('Narrador - <i>'+texto+'</i><br />')
+        document.write('<p class="negrita">Narrador: </p><p class="narrador">'+texto+'</p>')
     }
 }
 
@@ -45,7 +46,7 @@ class Personaje{
         this.nombre=nombre
     }
     hablar(texto){
-        document.write(this.nombre+' - '+texto+'<br />')
+        document.write('<p class="negrita">'+this.nombre+'</p> '+texto+'<br />')
     }
 }
 

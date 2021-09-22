@@ -1,0 +1,15 @@
+/*Luis C Marzal*/
+body
+    {
+        background-color: pink;
+    }
+    
+.negrita
+    {
+        font-weight: narrador;
+    }
+
+.narrador
+    {
+        font-style: italic;
+    }
