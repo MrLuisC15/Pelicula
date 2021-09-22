@@ -64,7 +64,12 @@ class Pelicula{
                     break;
                 case 3:
                     if(this.morgan.vivo==1) {
-                        morgandispara=this.random(1,2)
+                        if(this.maria.vivo==1) {
+                            morgandispara=this.random(1,2)
+                        }
+                        else {
+                            morgandispara=1
+                        }
                         if(morgandispara==1) {
                             this.narrador.hablar('Morgan aprieta el gatillo hacia Paco')
                         }
