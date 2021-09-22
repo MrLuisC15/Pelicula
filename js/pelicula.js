@@ -214,7 +214,7 @@ class Narrador{
     fallo(personaje) {
         let objetodisparo
         let texto
-        
+
         objetodisparo=this.random(1,5)
 
         switch(objetodisparo) {
@@ -231,7 +231,7 @@ class Narrador{
                 texto='habría chocado con el suelo.'
                 break;
             case 5:
-
+                texto='le habría dado en un sombrero de un civil asustado.'
         }
 
         document.write('<p class="narrador">*El disparo de '+personaje+' '+texto+'*</p>')
