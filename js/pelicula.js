@@ -9,9 +9,9 @@ class Pelicula{
         this.titulo = 'Tiroteo en Mississippi';
         this.pueblo = new Pueblo('TodoPolvo', 'muy polvoriento, en mitad del desierto de Arizona y a donde nadie querría llegar')
         this.narrador = new Narrador()
-        this.paco = new Personaje('Paco')
-        this.maria = new Personaje('Maria')
-        this.morgan = new Personaje('Morgan')
+        this.paco = new PersonajeBueno('Paco')
+        this.maria = new PersonajeBueno('Maria')
+        this.morgan = new PersonajeMalo('Morgan')
 
 
         this.iniciar();
@@ -26,7 +26,8 @@ class Pelicula{
         this.maria.hablar('Hola '+this.paco.nombre+', la verdad es que sí.')
         this.narrador.hablar('Ambos se miraron un instante y siguieron su amino...')
         this.narrador.hablar('Aparece un sujeto estraño en el pueblo con un sombrero de copa')
-        this.morgan.hablar('Vaya basura de pueblo')
+        this.morgan.hablar('Vaya basura de pueblo...')
+        this.morgan.hablar('¡Eh tú! ¡Pringao, dame ese caballo!')
     }
 
 }
@@ -48,11 +49,20 @@ class Personaje{
     constructor(nombre) {
         this.nombre=nombre
     }
+    
+}
+
+class PersonajeBueno extends Personaje{
     hablar(texto){
-        document.write('<p class="negrita">'+this.nombre+': </p> '+texto+'<br />')
+        document.write('<p class="negrita">'+this.nombre+': </p> <p class="bueno">'+texto+'</p><br />')
     }
 }
 
+class PersonajeMalo extends Personaje{
+    hablar(texto){
+        document.write('<p class="negrita">'+this.nombre+': </p> <p class="malo">'+texto+'</p><br />')
+    }
+}
 
 
 new Pelicula()

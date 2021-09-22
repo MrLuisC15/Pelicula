@@ -13,3 +13,13 @@ body
     {
         font-style: italic;
     }
+
+.bueno
+    {
+        color:green;
+    }
+
+.malo
+    {
+        color:red;
+    }
