@@ -38,7 +38,7 @@ class Pelicula{
         let disparador
         let morgandispara
         
-        while(this.morgan.vivo==1 && this.paco.vivo==1) {
+        while(this.morgan.vivo==1 && this.paco.vivo==1 && this.maria.vivo==1) {
 
             disparador=this.random(1,3)
 
@@ -162,7 +162,12 @@ class Pelicula{
                         this.narrador.final('María intentaría detener la hemorrágia de Paco y conseguiría salvarle la vida')
                     }
                     else {
-                        this.narrador.final('Paco intentaría detener la hemorrágia de María y conseguiría salvarle la vida')
+                        if(this.morgan.vivo==1 && this.maria.vivo==0 && this.paco.vivo==1) {
+                            this.narrador.final('Paco se marcharía corriendo esquivando las balas de Morgan')
+                        }
+                        else {
+                            this.narrador.final('Paco intentaría detener la hemorrágia de María y conseguiría salvarle la vida')
+                        }
                     }
                 }
             }
