@@ -55,7 +55,7 @@ class Narrador{
 class Personaje{
     constructor(nombre, balas) {
         this.nombre=nombre
-        this.arma=Arma(balas)
+        this.arma=new Arma(balas)
     }
     
 }
