@@ -133,7 +133,7 @@ class Pelicula{
                     case 1:
                         if(this.maria.arma.balas>0) {
                             this.maria.arma.balas--
-                            this.narrador.hablar('El disparo de María habría ido a las nubes')
+                            this.narrador.fallo(this.maria.nombre)
                         }
                         else {
                             this.narrador.hablar('El arma de María se habría quedado sin balas')
@@ -143,7 +143,7 @@ class Pelicula{
                     case 2:
                         if(this.paco.arma.balas>0) {
                             this.paco.arma.balas--
-                            this.narrador.hablar('El disparo de Paco habría ido a las nubes')
+                            this.narrador.fallo(this.paco.nombre)
                         }
                         else {
                             this.narrador.hablar('El arma de Paco se habría quedado sin balas')
@@ -153,7 +153,7 @@ class Pelicula{
                     case 3:
                         if(this.morgan.arma.balas>0) {
                             this.morgan.arma.balas--
-                            this.narrador.hablar('El disparo de Morgan habría ido a las nubes')
+                            this.narrador.fallo(this.morgan.nombre)
                         }
                         else {
                             this.narrador.hablar('El arma de Morgan se habría quedado sin balas')
@@ -212,6 +212,30 @@ class Narrador{
     final(texto){
         document.write('<h2 class="narrador">*'+texto+'*</h2>')
     }
+
+    fallo(personaje) {
+        objetodisparo=random(1,5)
+
+        switch(objetodisparo) {
+            case 1:
+                texto='habría dado en un barril.'
+                break;
+            case 2:
+                texto='habría ido hacia las nubes.'
+                break;
+            case 3:
+                texto='habría dado en la rueda de una carreta.'
+                break;
+            case 4:
+                texto='habría chocado con el suelo.'
+                break;
+            case 5:
+
+        }
+
+        document.write('<p class="narrador">*El disparo de '+personaje+' '+texto+'*</p>')
+    }
+
 }
 
 class Personaje{
