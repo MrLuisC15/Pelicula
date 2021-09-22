@@ -11,6 +11,7 @@ class Pelicula{
         this.narrador = new Narrador()
         this.paco = new Personaje('Paco')
         this.maria = new Personaje('Maria')
+        this.morgan = new Personaje('Morgan')
 
 
         this.iniciar();
@@ -24,6 +25,8 @@ class Pelicula{
         this.paco.hablar('Hola '+this.maria.nombre+'. Hoy hace un día espléndido.')
         this.maria.hablar('Hola '+this.paco.nombre+', la verdad es que sí.')
         this.narrador.hablar('Ambos se miraron un instante y siguieron su amino...')
+        this.narrador.hablar('Aparece un sujeto estraño en el pueblo con un sombrero de copa')
+        this.morgan.hablar('Vaya basura de pueblo')
     }
 
 }
