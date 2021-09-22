@@ -39,9 +39,15 @@ class Pelicula{
         let disparador
         let morgandispara
         
-        while(this.morgan.vivo==1 && this.paco.vivo==1 && this.maria.vivo==1) {
+        while(this.morgan.vivo==1 && this.paco.vivo==1) {
 
-            disparador=this.random(1,3)
+            if(this.maria.vivo==0) {
+                disparador=this.random(2,3)
+            }
+            else {
+                disparador=this.random(1,3)
+            }
+            
 
             switch(disparador) {
                 case 1:
