@@ -182,7 +182,7 @@ class Arma{
     disparar(){
         if(this.balas>0) {
             this.balas--
-            document.write('<p>¡¡PUM!! - Balas restantes: '+this.balas+'</p>')
+            document.write('<p>¡¡PUM!!💨</p>')
         }
         else {
             document.write('<p>Click...</p>')
