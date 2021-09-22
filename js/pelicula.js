@@ -27,7 +27,7 @@ class Pelicula{
         this.narrador.hablar('Ambos se miraron un instante y siguieron su amino...')
         this.narrador.hablar('Aparece un sujeto estraño en el pueblo con un sombrero de copa')
         this.morgan.hablar('Vaya basura de pueblo...')
-        this.morgan.hablar('¡Eh tú! ¡Pringao, dame ese caballo!')
+        this.morgan.hablar('¡Eh tú! ¡Pringao! Dame ese caballo y la cartera')
     }
 
 }
