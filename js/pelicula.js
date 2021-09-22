@@ -17,7 +17,10 @@ class Pelicula{
         this.iniciar();
 
     }
-
+    random(min, max) {
+        return Math.floor((Math.random() * (max - min + 1)) + min);
+    }
+    
     iniciar(){
         document.write('<h1>' + this.titulo + '</h1>');
         document.write('<p>'+this.pueblo.nombre+' era un pueblo '+this.pueblo.descripcion+'</p>')
@@ -31,7 +34,7 @@ class Pelicula{
 
         this.narrador.hablar('Maria ejecuta un disparo hacia Morgan')
         this.maria.arma.disparar()
-        let dado=(int)(Math.random()*10+1)
+        dado=random(1,10)
         if(dado>=5) {
             this.narrador.hablar('La bala impacta en el pecho de Morgan dejandolo abatido')
             this.morgan.vivo=0;
@@ -46,7 +49,7 @@ class Pelicula{
         else {
             this.narrador.hablar('Morgan dispara hacia Maria')
             this.morgan.arma.disparar()
-            dado=(int)(Math.random()*10+1)
+            dado=random(1,10)
             if(dado>=5) {
                 this.narrador.hablar('La bala impacta en el pecho de Maria dejandola abatida')
                 this.maria.vivo=0;
