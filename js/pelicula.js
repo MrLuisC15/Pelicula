@@ -212,6 +212,9 @@ class Narrador{
     }
 
     fallo(personaje) {
+        let objetodisparo
+        let texto
+        
         objetodisparo=this.random(1,5)
 
         switch(objetodisparo) {
