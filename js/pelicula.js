@@ -46,7 +46,7 @@ class Personaje{
         this.nombre=nombre
     }
     hablar(texto){
-        document.write('<p class="negrita">'+this.nombre+'</p> '+texto+'<br />')
+        document.write('<p class="negrita">'+this.nombre+': </p> '+texto+'<br />')
     }
 }
 
