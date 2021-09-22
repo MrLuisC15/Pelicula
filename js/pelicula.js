@@ -12,7 +12,7 @@ class Pelicula{
 
     }
     iniciar(){
-        document.write(this.titulo)
+        document.write('<h1>' + this.titulo + '</h1>')
     }
 
 }
