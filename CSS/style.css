@@ -1,7 +1,7 @@
 /*Luis C Marzal*/
 body
     {
-        background-color: gray;
+        background-color: darkgray;
         color:white;
     }
 
@@ -18,7 +18,7 @@ body
 
 .bueno
     {
-        color:green;
+        color:lime;
     }
 
 .malo
