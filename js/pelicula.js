@@ -8,7 +8,9 @@ class Pelicula{
         //This es el objeto que ejecuta el codigo
         this.titulo = 'Tiroteo en Mississippi';
         this.pueblo = new Pueblo('TodoPolvo', 'muy polvoriento, en mitad del desierto de Arizona y a donde nadie querría llegar')
-
+        this.narrador = new Narrador()
+        this.paco = new Personaje('Paco')
+        this.maria = new Personaje('Maria')
 
 
         this.iniciar();
@@ -17,8 +19,10 @@ class Pelicula{
 
     iniciar(){
         document.write('<h1>' + this.titulo + '</h1>');
-        document.write('<p>'+this.pueblo.nombre+' era un pueblo '+this.pueblo.descripcion+'</p>');
-        document.write('prueba');
+        document.write('<p>'+this.pueblo.nombre+' era un pueblo '+this.pueblo.descripcion+'</p>')
+        this.paco.hablar('Hola '+this.maria.nombre+'. Hoy hace un día espléndido.')
+        this.maria.hablar('Hola '+this.paco.nombre+', la verdad es que sí.')
+        this.narrador.hablar('Ambos se miraron un instante y siguieron su amino...')
     }
 
 }
@@ -30,6 +34,20 @@ class Pueblo{
     }
 }
 
+class Narrador{
+    hablar(texto){
+        document.write(texto)
+    }
+}
+
+class Personaje{
+    constructor(nombre) {
+        this.nombre=nombre
+    }
+    hablar(texto){
+        document.write(texto)
+    }
+}
 
 
 
