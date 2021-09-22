@@ -24,7 +24,7 @@ class Pelicula{
         this.narrador.hablar('Era una bonita mañana')
         this.paco.hablar('Hola '+this.maria.nombre+'. Hoy hace un día espléndido.')
         this.maria.hablar('Hola '+this.paco.nombre+', la verdad es que sí.')
-        this.narrador.hablar('Ambos se miraron un instante y siguieron su amino...')
+        this.narrador.hablar('Ambos se miraron un instante y siguieron su camino...')
         this.narrador.hablar('Aparece un sujeto estraño en el pueblo con un sombrero de copa')
         this.morgan.hablar('Vaya basura de pueblo...')
         this.morgan.hablar('¡Eh tú! ¡Pringao! Dame ese caballo y la cartera')
@@ -41,7 +41,7 @@ class Pueblo{
 
 class Narrador{
     hablar(texto){
-        document.write('<p class="negrita">Narrador: </p><p class="narrador">'+texto+'</p>')
+        document.write('<p class="narrador">*'+texto+'*</p>')
     }
 }
 
