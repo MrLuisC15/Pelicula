@@ -17,6 +17,7 @@ class Pelicula{
         this.iniciar();
 
     }
+
     random(min, max) {
         return Math.floor((Math.random() * (max - min + 1)) + min);
     }
@@ -32,34 +33,69 @@ class Pelicula{
         this.morgan.hablar('Vaya basura de pueblo...')
         this.morgan.hablar('¡Eh tú! ¡Pringao! Dame ese caballo y la cartera')
 
-        this.narrador.hablar('Maria ejecuta un disparo hacia Morgan')
-        this.maria.arma.disparar()
-        let dado=this.random(1,10)
-        if(dado>=5) {
-            this.narrador.hablar('La bala impacta en el pecho de Morgan dejandolo abatido')
-            this.morgan.vivo=0;
-        }
-        else {
-            this.narrador.hablar('La bala se va al aire sin darle a nadie')
-        }
+        
+        let dado
+        let disparador
+        let morgandispara
+        
+        while(this.morgan.vivo==1 && this.paco.vivo==1) {
 
-        if(this.morgan.vivo==0) {
-            this.narrador.hablar('Todos serían felices y comerían perdices')
-        }
-        else {
-            this.narrador.hablar('Morgan dispara hacia Maria')
-            this.morgan.arma.disparar()
-            dado=this.random(1,10)
+            disparador=this.random(1,3)
+
+            switch(disparador) {
+                case 1:
+                    if(this.maria.vivo==1) {
+                        this.narrador.hablar('Maria ejecuta un disparo hacia Morgan')
+                        this.maria.arma.disparar()
+                    }
+                    break;
+                case 2:
+                    if(this.paco.vivo==1) {
+                        this.narrador.hablar('Paco ejecuta un disparo hacia Morgan')
+                        this.paco.arma.disparar()
+                    }
+                    break;
+                case 3:
+                    if(this.morgan.vivo==1) {
+                        morgandispara=this.random(1,2)
+                        if(morgandispara==1) {
+                            this.narrador.hablar('Morgan ejecuta un disparo hacia Paco')
+                        }
+                        else {
+                            this.narrador.hablar('Morgan ejecuta un disparo hacia Maria')
+                        }
+                        this.morgan.arma.disparar()
+                    }
+            }
+// CUANDO DISPARE QUE COMPRUEBE SI TIENE 0, NO MATA A NADIE
+            
+           
             if(dado>=5) {
-                this.narrador.hablar('La bala impacta en el pecho de Maria dejandola abatida')
-                this.maria.vivo=0;
+                this.narrador.hablar('La bala impacta en el pecho de Morgan dejandolo abatido')
+                this.morgan.vivo=0;
             }
             else {
-                this.narrador.hablar('La bala impacta en el pecho de Paco dejandolo abatido')
-                this.paco.vivo=0;
-                this.narrador.hablar('Maria huye de la zona a grandes velocidades')
+                this.narrador.hablar('La bala se va al aire sin darle a nadie')
             }
 
+            if(this.morgan.vivo==0) {
+                this.narrador.hablar('Todos serían felices y comerían perdices')
+            }
+            else {
+                this.narrador.hablar('Morgan dispara hacia Maria')
+                this.morgan.arma.disparar()
+                dado=this.random(1,10)
+                if(dado>=5) {
+                    this.narrador.hablar('La bala impacta en el pecho de Maria dejandola abatida')
+                    this.maria.vivo=0;
+                }
+                else {
+                    this.narrador.hablar('La bala impacta en el pecho de Paco dejandolo abatido')
+                    this.paco.vivo=0;
+                    this.narrador.hablar('Maria huye de la zona a grandes velocidades')
+                }
+
+            }
         }
     }
 
