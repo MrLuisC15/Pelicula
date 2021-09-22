@@ -36,7 +36,7 @@ class Pueblo{
 
 class Narrador{
     hablar(texto){
-        document.write(texto)
+        document.write(' - '+texto+'<br />')
     }
 }
 
@@ -45,7 +45,7 @@ class Personaje{
         this.nombre=nombre
     }
     hablar(texto){
-        document.write(texto)
+        document.write(this.nombre+' - '+texto+'<br />')
     }
 }
 
