@@ -78,7 +78,7 @@ class Arma{
     }
     disparar(){
         if(this.balas>0) {
-            document.write('<p>¡¡PUM!!</p>')
+            document.write('<p>¡¡PUM!!'+this.balas+'</p>')
             this.balas--
         }
         else {
