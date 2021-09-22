@@ -19,7 +19,7 @@ class Pelicula{
     }
 
     
-    
+    //Proceso principal
     iniciar(){
         document.write('<h1>' + this.titulo + '</h1>');
         document.write('<p>'+this.pueblo.nombre+' era un pueblo '+this.pueblo.descripcion+'</p>')
@@ -33,14 +33,15 @@ class Pelicula{
         
         this.narrador.inicio('Maria y Paco se encuentran frente a Morgan e inician un tiroteo')
         
-        let muere
-        let disparador
-        let morgandispara
+        let muere           //Variable, si = 1 el disparo no falla
+        let disparador      //Variable para elegir quien efectua el disparo en el turno
+        let morgandispara   //Variable para elegir a quien dispara Morgan
         
         while(this.morgan.vivo==1 && this.paco.vivo==1) {
 
             document.write('---------------------------------------------------------------')
             
+            //Si maria ya no está viva que no cuente con ella para poder disparar
             if(this.maria.vivo==0) {
                 disparador=this.narrador.random(2,3)
             }
@@ -48,7 +49,7 @@ class Pelicula{
                 disparador=this.narrador.random(1,3)
             }
             
-
+            //Switch para el disparador
             switch(disparador) {
                 case 1:
                     if(this.maria.vivo==1) {
@@ -82,6 +83,7 @@ class Pelicula{
 
             muere=this.narrador.random(1,5)
 
+            //En el caso de que la variable muere sea = a 1 el disparado muere
             if(muere==1) {
                 switch(disparador) {
                     case 1:
@@ -129,6 +131,7 @@ class Pelicula{
                 }
             }
             else {
+                //Switch en el caso de que la variable muere sea diferente a 1, dispara a otro lugar
                 switch(disparador) {
                     case 1:
                         if(this.maria.arma.balas>0) {
@@ -193,6 +196,7 @@ class Pelicula{
     }
 }
 
+//Datos del pueblo
 class Pueblo{
     constructor(nombre, descripcion) {
         this.nombre=nombre;
@@ -200,6 +204,7 @@ class Pueblo{
     }
 }
 
+//Mensajes del narrador y funcion random
 class Narrador{
     hablar(texto){
         document.write('<p class="narrador">*'+texto+'*</p>')
@@ -245,6 +250,7 @@ class Narrador{
 
 }
 
+//Clase personaje
 class Personaje{
     constructor(nombre, balas, vivo) {
         this.nombre=nombre
@@ -254,18 +260,21 @@ class Personaje{
     
 }
 
+//Clase extendida de Personaje
 class PersonajeBueno extends Personaje{
     hablar(texto){
         document.write('<p class="negrita">'+this.nombre+': </p><p class="bueno">'+texto+'</p>')
     }
 }
 
+//Clase extendida de Personaje
 class PersonajeMalo extends Personaje{
     hablar(texto){
         document.write('<p class="negrita">'+this.nombre+': </p><p class="malo">'+texto+'</p>')
     }
 }
 
+//Clase de arma que lleva las balas de las armas de cada personaje y envía mensaje en cada disparo o sin balas
 class Arma{
     constructor(balas) {
         this.balas=balas
