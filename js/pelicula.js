@@ -28,6 +28,13 @@ class Pelicula{
         this.narrador.hablar('Aparece un sujeto estraño en el pueblo con un sombrero de copa')
         this.morgan.hablar('Vaya basura de pueblo...')
         this.morgan.hablar('¡Eh tú! ¡Pringao! Dame ese caballo y la cartera')
+
+        this.narrador.hablar('Maria ejecuta un disparo hacia Morgan')
+        this.maria.arma.disparar()
+        this.narrador.hablar('La bala se va al aire sin darle a nadie')
+        this.narrador.hablar('Morgan dispara hacia Maria')
+        this.morgan.arma.disparar()
+        this.narrador.hablar('La bala le da al brazo derecho de Maria')
     }
 
 }
@@ -48,6 +55,7 @@ class Narrador{
 class Personaje{
     constructor(nombre) {
         this.nombre=nombre
+        this.arma=Arma(3)
     }
     
 }
@@ -65,9 +73,21 @@ class PersonajeMalo extends Personaje{
 }
 
 class Arma{
-    constructor(arma, balas) {
-        this.arma=arma
+    constructor(balas) {
         this.balas=balas
+    }
+    disparar(){
+        if(this.balas>0) {
+            document.write('<p>¡¡PUM!!</p>')
+            this.balas--
+        }
+        else {
+            document.write('<p>Click...</p>')
+            this.cargar()
+        }
+    }
+    cargar(){
+        this.balas=6
     }
 }
 
