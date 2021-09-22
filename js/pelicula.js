@@ -92,7 +92,7 @@ class Pelicula{
                             this.morgan.vivo=0;
                         }
                         else {
-                            this.narrador.hablar('El arma de María se habría quedado sin balas')
+                            this.narrador.hablar('El arma de Maria se habría quedado sin balas')
                             this.maria.arma.cargar()
                         }
                         break;
@@ -136,7 +136,7 @@ class Pelicula{
                             this.narrador.fallo(this.maria.nombre)
                         }
                         else {
-                            this.narrador.hablar('El arma de María se habría quedado sin balas')
+                            this.narrador.hablar('El arma de Maria se habría quedado sin balas')
                             this.maria.arma.cargar()
                         }
                         break;
@@ -175,16 +175,16 @@ class Pelicula{
             }
             else {
                 if(this.morgan.vivo==1 && this.maria.vivo==1 && this.paco.vivo==0) {
-                    this.narrador.final('María se marcharía corriendo esquivando las balas de Morgan')
+                    this.narrador.final('Maria se marcharía corriendo esquivando las balas de Morgan')
                     document.write('<img src="img/run.gif">')
                 }
                 else {
                     if(this.morgan.vivo==0 && this.maria.vivo==1 && this.paco.vivo==0) {
-                        this.narrador.final('María intentaría detener la hemorrágia de Paco y conseguiría salvarle la vida')
+                        this.narrador.final('Maria intentaría detener la hemorragia de Paco y conseguiría salvarle la vida')
                         document.write('<img src="img/mariawin.gif">')
                     }
                     else {
-                        this.narrador.final('Paco intentaría detener la hemorrágia de María y conseguiría salvarle la vida')
+                        this.narrador.final('Paco intentaría detener la hemorragia de Maria y conseguiría salvarle la vida')
                         document.write('<img src="img/pacowin.gif">')
                     }
                 }
