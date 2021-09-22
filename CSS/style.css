@@ -25,3 +25,15 @@ body
     {
         color:red;
     }
+
+.disparo
+    {
+        font-weight: bold;
+        color:rgb(255, 123, 0);
+    }
+
+.sinbalas
+    {
+        font-weight: bold;
+        color:rgb(255, 219, 122);
+    }

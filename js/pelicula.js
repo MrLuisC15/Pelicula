@@ -272,10 +272,10 @@ class Arma{
     }
     disparar(){
         if(this.balas>0) {
-            document.write('<p>¡¡PUM!!💨</p>')
+            document.write('<p class="disparo">¡¡PUM!! 💨</p>')
         }
         else {
-            document.write('<p>Click...</p>')
+            document.write('<p class="sinbalas">Click...</p>')
         }
     }
     cargar(){
