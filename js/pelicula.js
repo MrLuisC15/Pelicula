@@ -165,7 +165,7 @@ class Pelicula{
         }
         else {
             if(this.morgan.vivo==1 && this.maria.vivo==0 && this.paco.vivo==0) {
-                this.narrador.final('Morgan saquearía todo '+this.pueblo.nombre+' y se marcharía con un caballo.')
+                this.narrador.final('Morgan saquearía '+this.pueblo.nombre+' y se marcharía en un caballo.')
                 document.write('<img src="img/morganwin.gif">')
             }
             else {
@@ -179,14 +179,8 @@ class Pelicula{
                         document.write('<img src="img/mariawin.gif">')
                     }
                     else {
-                        if(this.morgan.vivo==1 && this.maria.vivo==0 && this.paco.vivo==1) {
-                            this.narrador.final('Paco se marcharía corriendo esquivando las balas de Morgan')
-                            document.write('<img src="img/run.gif">')
-                        }
-                        else {
-                            this.narrador.final('Paco intentaría detener la hemorrágia de María y conseguiría salvarle la vida')
-                            document.write('<img src="img/pacowin.gif">')
-                        }
+                        this.narrador.final('Paco intentaría detener la hemorrágia de María y conseguiría salvarle la vida')
+                        document.write('<img src="img/pacowin.gif">')
                     }
                 }
             }
