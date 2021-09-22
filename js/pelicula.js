@@ -113,6 +113,36 @@ class Pelicula{
                         }
                 }
             }
+            else {
+                switch(disparador) {
+                    case 1:
+                        if(this.maria.arma.balas>0) {
+                            this.narrador.hablar('El disparo de María habría ido a las nubes')
+                        }
+                        else {
+                            this.narrador.hablar('El arma de María se habría quedado sin balas')
+                            this.maria.arma.cargar()
+                        }
+                        break;
+                    case 2:
+                        if(this.paco.arma.balas>0) {
+                            this.narrador.hablar('El disparo de Paco habría ido a las nubes')
+                        }
+                        else {
+                            this.narrador.hablar('El arma de Paco se habría quedado sin balas')
+                            this.paco.arma.cargar()
+                        }
+                        break;
+                    case 3:
+                        if(this.morgan.arma.balas>0) {
+                            this.narrador.hablar('El disparo de Morgan habría ido a las nubes')
+                        }
+                        else {
+                            this.narrador.hablar('El arma de Morgan se habría quedado sin balas')
+                            this.morgan.arma.cargar()
+                        }
+                }
+            }
         }
 
         //Mensaje final
