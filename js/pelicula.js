@@ -34,7 +34,7 @@ class Pelicula{
         this.morgan.hablar('¡Eh tú! ¡Pringao! Dame ese caballo y la cartera')
 
         
-        let dado
+        let muere
         let disparador
         let morgandispara
         
@@ -45,13 +45,13 @@ class Pelicula{
             switch(disparador) {
                 case 1:
                     if(this.maria.vivo==1) {
-                        this.narrador.hablar('Maria ejecuta un disparo hacia Morgan')
+                        this.narrador.hablar('Maria aprieta el gatillo hacia Morgan')
                         this.maria.arma.disparar()
                     }
                     break;
                 case 2:
                     if(this.paco.vivo==1) {
-                        this.narrador.hablar('Paco ejecuta un disparo hacia Morgan')
+                        this.narrador.hablar('Paco aprieta el gatillo hacia Morgan')
                         this.paco.arma.disparar()
                     }
                     break;
@@ -59,46 +59,82 @@ class Pelicula{
                     if(this.morgan.vivo==1) {
                         morgandispara=this.random(1,2)
                         if(morgandispara==1) {
-                            this.narrador.hablar('Morgan ejecuta un disparo hacia Paco')
+                            this.narrador.hablar('Morgan aprieta el gatillo hacia Paco')
                         }
                         else {
-                            this.narrador.hablar('Morgan ejecuta un disparo hacia Maria')
+                            this.narrador.hablar('Morgan aprieta el gatillo hacia Maria')
                         }
                         this.morgan.arma.disparar()
                     }
             }
-// CUANDO DISPARE QUE COMPRUEBE SI TIENE 0, NO MATA A NADIE
-            
-           
-            if(dado>=5) {
-                this.narrador.hablar('La bala impacta en el pecho de Morgan dejandolo abatido')
-                this.morgan.vivo=0;
-            }
-            else {
-                this.narrador.hablar('La bala se va al aire sin darle a nadie')
-            }
 
-            if(this.morgan.vivo==0) {
-                this.narrador.hablar('Todos serían felices y comerían perdices')
+            muere=this.random(1,5)
+
+            if(muere==1) {
+                switch(disparador) {
+                    case 1:
+                        if(this.maria.arma.balas>0) {
+                            this.morgan.hablar('¡AY!')
+                            this.narrador.hablar('El disparo de Maria habría dejado a Morgan abatido')
+                            this.morgan.vivo=0;
+                        }
+                        else {
+                            this.narrador.hablar('El arma de María se habría quedado sin balas')
+                        }
+                        break;
+                    case 2:
+                        if(this.paco.arma.balas>0) {
+                            this.morgan.hablar('¡AY!')
+                            this.narrador.hablar('El disparo de Paco habría dejado a Morgan abatido')
+                            this.morgan.vivo=0;
+                        }
+                        else {
+                            this.narrador.hablar('El arma de Paco se habría quedado sin balas')
+                        }
+                        break;
+                    case 3:
+                        if(this.morgan.arma.balas>0) {
+                            if(morgandispara==1) {
+                                this.paco.hablar('¡AY!')
+                                this.narrador.hablar('El disparo de Morgan habría dejado a Paco abatido')
+                                this.paco.vivo=0;
+                            }
+                            else {
+                                this.maria.hablar('¡AY!')
+                                this.narrador.hablar('El disparo de Morgan habría dejado a Maria abatida')
+                                this.maria.vivo=0;
+                            }
+                        }
+                        else {
+                            this.narrador.hablar('El arma de Morgan se habría quedado sin balas')
+                        }
+                }
+            }
+        }
+
+        //Mensaje final
+        if(this.morgan.vivo==0 && this.maria.vivo==1 && this.paco.vivo==1) {
+            this.narrador.final('Todos serían felices y comerían perdices.')
+        }
+        else {
+            if(this.morgan.vivo==1 && this.maria.vivo==0 && this.paco.vivo==0) {
+                this.narrador.final('Morgan saquearía todo '+this.pueblo.nombre+' y se marcharía con un caballo.')
             }
             else {
-                this.narrador.hablar('Morgan dispara hacia Maria')
-                this.morgan.arma.disparar()
-                dado=this.random(1,10)
-                if(dado>=5) {
-                    this.narrador.hablar('La bala impacta en el pecho de Maria dejandola abatida')
-                    this.maria.vivo=0;
+                if(this.morgan.vivo==1 && this.maria.vivo==1 && this.paco.vivo==0) {
+                    this.narrador.final('María se marcharía corriendo esquivando las balas de Morgan')
                 }
                 else {
-                    this.narrador.hablar('La bala impacta en el pecho de Paco dejandolo abatido')
-                    this.paco.vivo=0;
-                    this.narrador.hablar('Maria huye de la zona a grandes velocidades')
+                    if(this.morgan.vivo==0 && this.maria.vivo==1 && this.paco.vivo==0) {
+                        this.narrador.final('María intentaría detener la hemorrágia de Paco y conseguiría salvarle la vida')
+                    }
+                    else {
+                        this.narrador.final('Paco intentaría detener la hemorrágia de María y conseguiría salvarle la vida')
+                    }
                 }
-
             }
         }
     }
-
 }
 
 class Pueblo{
@@ -111,6 +147,10 @@ class Pueblo{
 class Narrador{
     hablar(texto){
         document.write('<p class="narrador">*'+texto+'*</p>')
+    }
+
+    final(texto){
+        document.write('<h2 class="narrador">*'+texto+'*</h2>')
     }
 }
 
