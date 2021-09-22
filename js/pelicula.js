@@ -39,6 +39,8 @@ class Pelicula{
         
         while(this.morgan.vivo==1 && this.paco.vivo==1) {
 
+            document.write('---------------------------------------------------------------')
+            
             if(this.maria.vivo==0) {
                 disparador=this.narrador.random(2,3)
             }
