@@ -9,9 +9,9 @@ class Pelicula{
         this.titulo = 'Tiroteo en Mississippi';
         this.pueblo = new Pueblo('TodoPolvo', 'muy polvoriento, en mitad del desierto de Arizona y a donde nadie querría llegar')
         this.narrador = new Narrador()
-        this.paco = new PersonajeBueno('Paco')
-        this.maria = new PersonajeBueno('Maria')
-        this.morgan = new PersonajeMalo('Morgan')
+        this.paco = new PersonajeBueno('Paco',3)
+        this.maria = new PersonajeBueno('Maria',2)
+        this.morgan = new PersonajeMalo('Morgan',4)
 
 
         this.iniciar();
@@ -53,9 +53,9 @@ class Narrador{
 }
 
 class Personaje{
-    constructor(nombre) {
+    constructor(nombre,arma) {
         this.nombre=nombre
-        this.arma=Arma(3)
+        this.arma=Arma(arma)
     }
     
 }
