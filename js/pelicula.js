@@ -46,13 +46,13 @@ class Pelicula{
                 case 1:
                     if(this.maria.vivo==1) {
                         this.narrador.hablar('Maria aprieta el gatillo hacia Morgan')
-                        this.maria.arma.disparar()
+                        //this.maria.arma.disparar()
                     }
                     break;
                 case 2:
                     if(this.paco.vivo==1) {
                         this.narrador.hablar('Paco aprieta el gatillo hacia Morgan')
-                        this.paco.arma.disparar()
+                        //this.paco.arma.disparar()
                     }
                     break;
                 case 3:
@@ -64,7 +64,6 @@ class Pelicula{
                         else {
                             this.narrador.hablar('Morgan aprieta el gatillo hacia Maria')
                         }
-                        this.morgan.arma.disparar()
                     }
             }
 
@@ -74,26 +73,32 @@ class Pelicula{
                 switch(disparador) {
                     case 1:
                         if(this.maria.arma.balas>0) {
+                            this.maria.arma.disparar()
                             this.morgan.hablar('¡AY!')
                             this.narrador.hablar('El disparo de Maria habría dejado a Morgan abatido')
                             this.morgan.vivo=0;
                         }
                         else {
+                            this.maria.arma.disparar()
                             this.narrador.hablar('El arma de María se habría quedado sin balas')
                         }
                         break;
                     case 2:
                         if(this.paco.arma.balas>0) {
+                            this.paco.arma.disparar()
                             this.morgan.hablar('¡AY!')
                             this.narrador.hablar('El disparo de Paco habría dejado a Morgan abatido')
                             this.morgan.vivo=0;
                         }
                         else {
+                            this.paco.arma.disparar()
                             this.narrador.hablar('El arma de Paco se habría quedado sin balas')
                         }
                         break;
                     case 3:
+                        
                         if(this.morgan.arma.balas>0) {
+                            this.morgan.arma.disparar()
                             if(morgandispara==1) {
                                 this.paco.hablar('¡AY!')
                                 this.narrador.hablar('El disparo de Morgan habría dejado a Paco abatido')
@@ -106,6 +111,7 @@ class Pelicula{
                             }
                         }
                         else {
+                            this.morgan.arma.disparar()
                             this.narrador.hablar('El arma de Morgan se habría quedado sin balas')
                         }
                 }
