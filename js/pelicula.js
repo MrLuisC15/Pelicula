@@ -74,6 +74,7 @@ class Pelicula{
                 switch(disparador) {
                     case 1:
                         if(this.maria.arma.balas>0) {
+                            this.maria.arma.balas--
                             this.morgan.hablar('¡AY!')
                             this.narrador.hablar('El disparo de Maria habría dejado a Morgan abatido')
                             this.morgan.vivo=0;
@@ -85,6 +86,7 @@ class Pelicula{
                         break;
                     case 2:
                         if(this.paco.arma.balas>0) {
+                            this.paco.arma.balas--
                             this.morgan.hablar('¡AY!')
                             this.narrador.hablar('El disparo de Paco habría dejado a Morgan abatido')
                             this.morgan.vivo=0;
@@ -96,6 +98,7 @@ class Pelicula{
                         break;
                     case 3:
                         if(this.morgan.arma.balas>0) {
+                            this.morgan.arma.balas--
                             if(morgandispara==1) {
                                 this.paco.hablar('¡AY!')
                                 this.narrador.hablar('El disparo de Morgan habría dejado a Paco abatido')
@@ -117,6 +120,7 @@ class Pelicula{
                 switch(disparador) {
                     case 1:
                         if(this.maria.arma.balas>0) {
+                            this.maria.arma.balas--
                             this.narrador.hablar('El disparo de María habría ido a las nubes')
                         }
                         else {
@@ -126,6 +130,7 @@ class Pelicula{
                         break;
                     case 2:
                         if(this.paco.arma.balas>0) {
+                            this.paco.arma.balas--
                             this.narrador.hablar('El disparo de Paco habría ido a las nubes')
                         }
                         else {
@@ -135,6 +140,7 @@ class Pelicula{
                         break;
                     case 3:
                         if(this.morgan.arma.balas>0) {
+                            this.morgan.arma.balas--
                             this.narrador.hablar('El disparo de Morgan habría ido a las nubes')
                         }
                         else {
@@ -219,7 +225,6 @@ class Arma{
     }
     disparar(){
         if(this.balas>0) {
-            this.balas--
             document.write('<p>¡¡PUM!!💨</p>')
         }
         else {
