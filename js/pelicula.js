@@ -17,7 +17,7 @@ class Pelicula{
 
     iniciar(){
         document.write('<h1>' + this.titulo + '</h1>');
-        document.write('<p>'+this.pueblo.nombre+' era un pueblo '+this.pueblo.descripcion)
+        document.write('<p>'+this.pueblo.nombre+' era un pueblo '+this.pueblo.descripcion+'</p>');
     }
 
 }
