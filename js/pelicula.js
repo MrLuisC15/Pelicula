@@ -18,9 +18,7 @@ class Pelicula{
 
     }
 
-    random(min, max) {
-        return Math.floor((Math.random() * (max - min + 1)) + min);
-    }
+    
     
     iniciar(){
         document.write('<h1>' + this.titulo + '</h1>');
@@ -42,10 +40,10 @@ class Pelicula{
         while(this.morgan.vivo==1 && this.paco.vivo==1) {
 
             if(this.maria.vivo==0) {
-                disparador=this.random(2,3)
+                disparador=this.narrador.random(2,3)
             }
             else {
-                disparador=this.random(1,3)
+                disparador=this.narrador.random(1,3)
             }
             
 
@@ -65,7 +63,7 @@ class Pelicula{
                 case 3:
                     if(this.morgan.vivo==1) {
                         if(this.maria.vivo==1) {
-                            morgandispara=this.random(1,2)
+                            morgandispara=this.narrador.random(1,2)
                         }
                         else {
                             morgandispara=1
@@ -80,7 +78,7 @@ class Pelicula{
                     }
             }
 
-            muere=this.random(1,5)
+            muere=this.narrador.random(1,5)
 
             if(muere==1) {
                 switch(disparador) {
@@ -214,7 +212,7 @@ class Narrador{
     }
 
     fallo(personaje) {
-        objetodisparo=random(1,5)
+        objetodisparo=this.random(1,5)
 
         switch(objetodisparo) {
             case 1:
@@ -234,6 +232,10 @@ class Narrador{
         }
 
         document.write('<p class="narrador">*El disparo de '+personaje+' '+texto+'*</p>')
+    }
+
+    random(min, max) {
+        return Math.floor((Math.random() * (max - min + 1)) + min);
     }
 
 }
