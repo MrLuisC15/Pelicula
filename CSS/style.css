@@ -1,7 +1,7 @@
 /*Luis C Marzal*/
 body
     {
-        background-color: darkgray;
+        background-color: black;
         color:white;
     }
 
@@ -13,7 +13,7 @@ body
 .narrador
     {
         font-style: italic;
-        color:gray;
+        color:lightgray;
     }
 
 .bueno

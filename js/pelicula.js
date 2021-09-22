@@ -64,6 +64,13 @@ class PersonajeMalo extends Personaje{
     }
 }
 
+class Arma{
+    constructor(arma, balas) {
+        this.arma=arma
+        this.balas=balas
+    }
+}
+
 
 new Pelicula()
 
