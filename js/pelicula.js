@@ -8,9 +8,10 @@ class Pelicula{
         //This es el objeto que ejecuta el codigo
         this.titulo = 'Tiroteo en Mississippi'
 
-        iniciar()
+        this.iniciar();
 
     }
+
     iniciar(){
         document.write('<h1>' + this.titulo + '</h1>')
     }
