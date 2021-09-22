@@ -54,13 +54,13 @@ class Personaje{
 
 class PersonajeBueno extends Personaje{
     hablar(texto){
-        document.write('<p class="negrita">'+this.nombre+': </p> <p class="bueno">'+texto+'</p><br />')
+        document.write('<p class="negrita">'+this.nombre+': </p> <p class="bueno">'+texto+'</p>')
     }
 }
 
 class PersonajeMalo extends Personaje{
     hablar(texto){
-        document.write('<p class="negrita">'+this.nombre+': </p> <p class="malo">'+texto+'</p><br />')
+        document.write('<p class="negrita">'+this.nombre+': </p> <p class="malo">'+texto+'</p>')
     }
 }
 
