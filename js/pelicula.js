@@ -155,25 +155,31 @@ class Pelicula{
         //Mensaje final
         if(this.morgan.vivo==0 && this.maria.vivo==1 && this.paco.vivo==1) {
             this.narrador.final('Todos serían felices y comerían perdices.')
+            document.write('<img src="img/morganloose.gif">')
         }
         else {
             if(this.morgan.vivo==1 && this.maria.vivo==0 && this.paco.vivo==0) {
                 this.narrador.final('Morgan saquearía todo '+this.pueblo.nombre+' y se marcharía con un caballo.')
+                document.write('<img src="img/morganwin.gif">')
             }
             else {
                 if(this.morgan.vivo==1 && this.maria.vivo==1 && this.paco.vivo==0) {
                     this.narrador.final('María se marcharía corriendo esquivando las balas de Morgan')
+                    document.write('<img src="img/run.gif">')
                 }
                 else {
                     if(this.morgan.vivo==0 && this.maria.vivo==1 && this.paco.vivo==0) {
                         this.narrador.final('María intentaría detener la hemorrágia de Paco y conseguiría salvarle la vida')
+                        document.write('<img src="img/mariawin.gif">')
                     }
                     else {
                         if(this.morgan.vivo==1 && this.maria.vivo==0 && this.paco.vivo==1) {
                             this.narrador.final('Paco se marcharía corriendo esquivando las balas de Morgan')
+                            document.write('<img src="img/run.gif">')
                         }
                         else {
                             this.narrador.final('Paco intentaría detener la hemorrágia de María y conseguiría salvarle la vida')
+                            document.write('<img src="img/pacowin.gif">')
                         }
                     }
                 }
