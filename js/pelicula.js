@@ -31,7 +31,7 @@ class Pelicula{
 
         this.narrador.hablar('Maria ejecuta un disparo hacia Morgan')
         this.maria.arma.disparar()
-        dado=(int)(Math.random()*10+1)
+        let dado=(int)(Math.random()*10+1)
         if(dado>=5) {
             this.narrador.hablar('La bala impacta en el pecho de Morgan dejandolo abatido')
             this.morgan.vivo=0;
