@@ -11,7 +11,7 @@ class Pelicula{
         this.narrador = new Narrador()
         this.paco = new PersonajeBueno('Paco',3,1)
         this.maria = new PersonajeBueno('Maria',2,1)
-        this.morgan = new PersonajeMalo('Morgan',4,1)
+        this.morgan = new PersonajeMalo('Morgan',6,1)
 
 
         this.iniciar();
