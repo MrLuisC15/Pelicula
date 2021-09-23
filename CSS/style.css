@@ -37,3 +37,8 @@ body
         font-weight: bold;
         color:rgb(255, 219, 122);
     }
+
+#copy
+    {
+        text-align: right;
+    }
